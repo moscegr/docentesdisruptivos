@@ -16,9 +16,6 @@
             /* Degradado basado en tu paleta de colores: Azul profundo a Violeta/Turquesa */
             background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #064e3b 100%);
             color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
         }
         .glass-panel {
             background: rgba(255, 255, 255, 0.05);
@@ -41,10 +38,9 @@
         }
     </style>
 </head>
-<!-- Cambiamos overflow-hidden a overflow-x-hidden para permitir el scroll vertical en móviles -->
-<body class="antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white relative">
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden selection:bg-teal-500 selection:text-white">
 
-    <!-- Elementos decorativos de fondo (Ahora fixed para que acompañen el scroll suavemente) -->
+    <!-- Elementos decorativos de fondo (Fixed para que acompañen el scroll) -->
     <div class="fixed top-1/4 left-1/4 w-64 h-64 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
     <div class="fixed bottom-1/4 right-1/4 w-64 h-64 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
 
@@ -61,12 +57,11 @@
         </div>
     </nav>
 
-    <!-- Contenido Principal -->
-    <!-- Agregamos py-24 para que el contenido no quede oculto detrás del navbar en pantallas pequeñas -->
-    <main class="flex-grow flex items-center justify-center px-4 py-24 relative z-10 w-full">
+    <!-- Contenido Principal: Ajustado para hacer scroll si la pantalla es corta -->
+    <main class="flex-grow flex flex-col justify-center px-4 py-28 md:py-32 relative z-10 w-full">
 
-        <!-- Redujimos el padding en móviles (p-6) y dejamos el amplio en escritorio (md:p-16) -->
-        <div class="max-w-4xl w-full text-center glass-panel p-6 sm:p-10 md:p-16 rounded-3xl shadow-2xl">
+        <!-- Contenedor central con mx-auto para asegurar centrado y scroll libre -->
+        <div class="max-w-4xl w-full mx-auto text-center glass-panel p-6 sm:p-10 md:p-16 rounded-3xl shadow-2xl">
             
             <div class="flex justify-center mb-6">
                 <div class="p-4 bg-white/10 rounded-2xl animate-float">
@@ -74,7 +69,6 @@
                 </div>
             </div>
 
-            <!-- Ajuste del tamaño de texto según el dispositivo (text-3xl en móviles, text-6xl en escritorio) -->
             <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 tracking-tight leading-tight">
                 El portal de formación docente <br class="hidden md:block">
                 está en <span class="text-gradient">construcción</span>.
@@ -86,7 +80,7 @@
                 <strong class="text-white font-semibold">Innovar la docencia es transformar el bachillerato.</strong>
             </p>
 
-            <!-- Módulos Preview: 1 columna en móvil, 2 en tablet, 4 en escritorio -->
+            <!-- Módulos Preview -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-10 text-left">
                 <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
                     <i data-lucide="microscope" class="text-teal-400 mb-2 w-6 h-6"></i>
@@ -106,7 +100,8 @@
                 </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <!-- Botón de acción (ahora no se cortará en laptops) -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pb-4">
                 <button class="w-full sm:w-auto px-8 py-3 bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold rounded-full transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.5)]">
                     Notificarme el lanzamiento
                 </button>
@@ -115,7 +110,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full text-center p-6 text-xs md:text-sm text-gray-400 relative z-20">
+    <footer class="w-full text-center p-6 text-xs md:text-sm text-gray-400 relative z-20 mt-auto">
         <p>&copy; 2026 Docentes Disruptivos. Oficina Guerrero.</p>
     </footer>
 
