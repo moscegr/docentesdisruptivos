@@ -41,13 +41,18 @@
         }
     </style>
 </head>
-<body class="antialiased overflow-hidden selection:bg-teal-500 selection:text-white">
+<!-- Cambiamos overflow-hidden a overflow-x-hidden para permitir el scroll vertical en móviles -->
+<body class="antialiased overflow-x-hidden selection:bg-teal-500 selection:text-white relative">
+
+    <!-- Elementos decorativos de fondo (Ahora fixed para que acompañen el scroll suavemente) -->
+    <div class="fixed top-1/4 left-1/4 w-64 h-64 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
+    <div class="fixed bottom-1/4 right-1/4 w-64 h-64 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 -z-10"></div>
 
     <!-- Navbar simplificado -->
-    <nav class="w-full p-6 flex justify-between items-center absolute top-0 z-10">
+    <nav class="w-full p-4 md:p-6 flex justify-between items-center absolute top-0 z-20">
         <div class="flex items-center gap-2">
-            <i data-lucide="layers" class="text-teal-400 w-8 h-8"></i>
-            <span class="font-bold text-xl tracking-tight">Docentes<span class="text-teal-400">Disruptivos</span></span>
+            <i data-lucide="layers" class="text-teal-400 w-7 h-7 md:w-8 md:h-8"></i>
+            <span class="font-bold text-lg md:text-xl tracking-tight">Docentes<span class="text-teal-400">Disruptivos</span></span>
         </div>
         <div class="hidden md:flex gap-6 text-sm font-medium text-gray-300">
             <span>NEM</span>
@@ -57,52 +62,52 @@
     </nav>
 
     <!-- Contenido Principal -->
-    <main class="flex-grow flex items-center justify-center px-4 relative z-0">
-        <!-- Elementos decorativos de fondo -->
-        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-teal-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-violet-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+    <!-- Agregamos py-24 para que el contenido no quede oculto detrás del navbar en pantallas pequeñas -->
+    <main class="flex-grow flex items-center justify-center px-4 py-24 relative z-10 w-full">
 
-        <div class="max-w-4xl text-center glass-panel p-10 md:p-16 rounded-3xl shadow-2xl relative z-10">
+        <!-- Redujimos el padding en móviles (p-6) y dejamos el amplio en escritorio (md:p-16) -->
+        <div class="max-w-4xl w-full text-center glass-panel p-6 sm:p-10 md:p-16 rounded-3xl shadow-2xl">
             
             <div class="flex justify-center mb-6">
                 <div class="p-4 bg-white/10 rounded-2xl animate-float">
-                    <i data-lucide="rocket" class="w-12 h-12 text-violet-400"></i>
+                    <i data-lucide="rocket" class="w-10 h-10 md:w-12 md:h-12 text-violet-400"></i>
                 </div>
             </div>
 
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+            <!-- Ajuste del tamaño de texto según el dispositivo (text-3xl en móviles, text-6xl en escritorio) -->
+            <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 tracking-tight leading-tight">
                 El portal de formación docente <br class="hidden md:block">
                 está en <span class="text-gradient">construcción</span>.
             </h1>
             
-            <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light">
+            <p class="text-base md:text-xl text-gray-300 mb-8 md:mb-10 max-w-2xl mx-auto font-light">
                 Estamos diseñando una plataforma revolucionaria para la integración de tecnologías disruptivas, alineada con la Nueva Escuela Mexicana y la DGETI. 
                 <br><br>
                 <strong class="text-white font-semibold">Innovar la docencia es transformar el bachillerato.</strong>
             </p>
 
-            <!-- Módulos Preview (Tarjetas pequeñas) -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10 text-left">
-                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+            <!-- Módulos Preview: 1 columna en móvil, 2 en tablet, 4 en escritorio -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-10 text-left">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
                     <i data-lucide="microscope" class="text-teal-400 mb-2 w-6 h-6"></i>
                     <h3 class="text-sm font-bold text-gray-200">1. Diagnóstico</h3>
                 </div>
-                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
                     <i data-lucide="book-open" class="text-indigo-400 mb-2 w-6 h-6"></i>
                     <h3 class="text-sm font-bold text-gray-200">2. Alineación</h3>
                 </div>
-                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
                     <i data-lucide="cpu" class="text-violet-400 mb-2 w-6 h-6"></i>
                     <h3 class="text-sm font-bold text-gray-200">3. Tecnologías</h3>
                 </div>
-                <div class="bg-white/5 p-4 rounded-xl border border-white/10">
+                <div class="bg-white/5 p-4 rounded-xl border border-white/10 flex flex-col justify-center items-center sm:items-start text-center sm:text-left">
                     <i data-lucide="pen-tool" class="text-pink-400 mb-2 w-6 h-6"></i>
                     <h3 class="text-sm font-bold text-gray-200">4. Diseño</h3>
                 </div>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="px-8 py-3 bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold rounded-full transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.5)]">
+                <button class="w-full sm:w-auto px-8 py-3 bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold rounded-full transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.5)]">
                     Notificarme el lanzamiento
                 </button>
             </div>
@@ -110,7 +115,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="w-full text-center p-6 text-sm text-gray-400 relative z-10">
+    <footer class="w-full text-center p-6 text-xs md:text-sm text-gray-400 relative z-20">
         <p>&copy; 2026 Docentes Disruptivos. Oficina Guerrero.</p>
     </footer>
 
