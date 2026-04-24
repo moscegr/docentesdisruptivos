@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Módulos | Docentes Disruptivos</title>
+  <meta name="description" content="Prototipo robusto del portal Docentes Disruptivos para pilotaje y presentación de tesis.">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">D</span>
+      <span>Docentes Disruptivos<small>Prototipo robusto para tesis</small></span>
+    </a>
+    <button class="mobile-toggle" data-mobile-toggle aria-label="Abrir menú">☰</button>
+    <nav class="nav-links" data-nav-links><a href="index.html" class="">Inicio</a><a href="metodologia.html" class="">Metodología</a><a href="modulos.html" class="active">Módulos</a><a href="recursos.html" class="">Recursos</a><a href="comunidad.html" class="">Comunidad</a><a href="dgeti.html" class="">DGETI</a><a href="evidencias.html" class="">Evidencias</a><a href="pilotaje.html" class="">Pilotaje</a></nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="dashboard.html">Ingresar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-split">
+      <div class="hero-copy glass">
+        <div class="eyebrow">Módulos y diseño aplicado</div>
+        <h1>La ruta metodológica en <span class="highlight">seis módulos accionables</span></h1>
+        <p class="lead">Cada módulo propone foco pedagógico, productos verificables, ejemplo breve y una microacción demostrable. Además, esta página permite guardar una secuencia didáctica como evidencia de diseño.</p>
+      </div>
+      <div class="hero-side-card glass">
+        <h3 style="margin-top:0;color:#fff;">Estado actual de la ruta</h3>
+        <div id="dashboard-route"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container route-grid">
+      <article class="module-card"><span class="module-number">1</span><h3>Diagnóstico y sensibilización docente</h3><p class="section-intro">Explora competencia digital, brechas y punto de partida del docente.</p><div class="chip-row"><span class="chip">Autodiagnóstico</span><span class="chip">Contexto</span><span class="chip">Reflexión</span></div></article>
+      <article class="module-card"><span class="module-number">2</span><h3>Alineación con NEM y MCCEMS</h3><p class="section-intro">Conecta humanismo, inclusión, progresiones y cultura digital.</p><div class="chip-row"><span class="chip">NEM</span><span class="chip">MCCEMS</span><span class="chip">Transversalidad</span></div></article>
+      <article class="module-card"><span class="module-number">3</span><h3>Selección de tecnologías disruptivas</h3><p class="section-intro">Elige herramientas por propósito didáctico y viabilidad.</p><div class="chip-row"><span class="chip">IA</span><span class="chip">RA/RV</span><span class="chip">LMS</span></div></article>
+      <article class="module-card"><span class="module-number">4</span><h3>Diseño didáctico innovador</h3><p class="section-intro">Construye secuencias con ABP, retos y actividades auténticas.</p><div class="chip-row"><span class="chip">ABP</span><span class="chip">STEAM</span><span class="chip">Aula invertida</span></div></article>
+      <article class="module-card"><span class="module-number">5</span><h3>Implementación y mediación pedagógica</h3><p class="section-intro">Acompaña, observa, ajusta y coordina con academias.</p><div class="chip-row"><span class="chip">Aula híbrida</span><span class="chip">Acompañamiento</span><span class="chip">Academias</span></div></article>
+      <article class="module-card"><span class="module-number">6</span><h3>Evaluación, evidencias y mejora continua</h3><p class="section-intro">Organiza portafolio, indicadores y decisiones de refinamiento.</p><div class="chip-row"><span class="chip">Rúbricas</span><span class="chip">Portafolio</span><span class="chip">Mejora</span></div></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid-2">
+      <article class="form-card">
+        <h2>Diseña una secuencia didáctica para el pilotaje</h2>
+        <p class="section-intro">Este formulario funciona como actividad integradora de los módulos 4 y 5. Guárdalo y luego úsalo como evidencia o punto de discusión en academia.</p>
+        <div id="lesson-plan-notice" class="notice"></div>
+        <form id="lesson-plan-form">
+          <div class="field-grid">
+            <label>Título de la secuencia
+              <input type="text" name="titulo" placeholder="Ej. Debate asistido con IA sobre cambio climático" required>
+            </label>
+            <label>Asignatura
+              <input type="text" name="asignatura" placeholder="Ej. Ciencias Sociales" required>
+            </label>
+          </div>
+          <div class="field-grid">
+            <label>Semestre
+              <select name="semestre" required>
+                <option value="">Selecciona</option>
+                <option>1.º</option><option>2.º</option><option>3.º</option><option>4.º</option><option>5.º</option><option>6.º</option>
+              </select>
+            </label>
+            <label>Tecnología disruptiva principal
+              <select name="tecnologia" required>
+                <option value="">Selecciona</option>
+                <option>IA generativa</option>
+                <option>Realidad aumentada</option>
+                <option>Laboratorio virtual</option>
+                <option>LMS y analítica</option>
+                <option>Herramienta colaborativa</option>
+              </select>
+            </label>
+          </div>
+          <label>Objetivo de aprendizaje
+            <textarea name="objetivo" placeholder="Redacta el propósito de la secuencia" required></textarea>
+          </label>
+          <label>Producto o evidencia esperada
+            <textarea name="evidencia" placeholder="Ej. infografía comparativa, rúbrica y reflexión del estudiante"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Guardar secuencia</button>
+        </form>
+      </article>
+      <article class="panel-card">
+        <h2>Secuencias guardadas</h2>
+        <div id="lesson-plan-list"></div>
+        <div class="banner-note" style="margin-top:1rem;"><span>🛠️</span><div><strong>Ejemplo breve:</strong> si un docente trabaja Pensamiento Matemático, puede usar un simulador y una herramienta de IA para que el estudiantado compare estrategias de resolución y argumente cuál es más eficiente.</div></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container">
+      <h2>Ejemplos y ejercicios por módulo</h2>
+      <div class="tabs" data-tab-group>
+        <button class="tab-btn active" data-tab-btn="m1">Módulo 1</button>
+        <button class="tab-btn" data-tab-btn="m2">Módulo 2</button>
+        <button class="tab-btn" data-tab-btn="m3">Módulo 3</button>
+        <button class="tab-btn" data-tab-btn="m4">Módulo 4</button>
+        <button class="tab-btn" data-tab-btn="m5">Módulo 5</button>
+        <button class="tab-btn" data-tab-btn="m6">Módulo 6</button>
+      </div>
+      <div class="tab-pane active" data-tab-pane="m1"><div class="panel-card"><h3>Ejercicio de sensibilización</h3><p class="section-intro">Selecciona una práctica que hoy realizas sin tecnología y reescríbela con una mejora concreta: más participación, más claridad, más retroalimentación o mejor acceso.</p></div></div>
+      <div class="tab-pane" data-tab-pane="m2"><div class="panel-card"><h3>Ejercicio de alineación</h3><p class="section-intro">Toma una progresión del MCCEMS y vincúlala con un recurso sociocognitivo y una decisión de inclusión. El resultado puede convertirse en matriz de planeación.</p></div></div>
+      <div class="tab-pane" data-tab-pane="m3"><div class="panel-card"><h3>Ejercicio de selección tecnológica</h3><p class="section-intro">Compara dos herramientas usando estos criterios: propósito pedagógico, accesibilidad, facilidad de implementación, evidencia que genera y riesgo ético.</p></div></div>
+      <div class="tab-pane" data-tab-pane="m4"><div class="panel-card"><h3>Ejercicio de diseño</h3><p class="section-intro">Redacta una secuencia de tres momentos: apertura, desarrollo y cierre; en cada momento indica la mediación docente, la herramienta y la evidencia.</p></div></div>
+      <div class="tab-pane" data-tab-pane="m5"><div class="panel-card"><h3>Ejercicio de implementación</h3><p class="section-intro">Define qué observarás durante la aplicación: participación, autonomía, tiempo, dificultades técnicas y calidad de la interacción.</p></div></div>
+      <div class="tab-pane" data-tab-pane="m6"><div class="panel-card"><h3>Ejercicio de evaluación</h3><p class="section-intro">Organiza tres evidencias mínimas del pilotaje y escribe una reflexión docente breve con hallazgos, ajustes y siguiente paso.</p></div></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="brand-mark">D</span><span>Docentes Disruptivos<small>Innovar la docencia es transformar el bachillerato.</small></span></div>
+      <p class="section-intro">Versión demostrativa con formularios funcionales, dashboard, analítica básica y componentes para un pilotaje de tesis.</p>
+    </div>
+    <div>
+      <strong>Explora</strong>
+      <ul>
+        <li><a href="metodologia.html">Fundamentos</a></li>
+        <li><a href="modulos.html">Ruta metodológica</a></li>
+        <li><a href="recursos.html">Biblioteca</a></li>
+        <li><a href="pilotaje.html">Analítica</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Implementación</strong>
+      <ul>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="dgeti.html">DGETI</a></li>
+        <li><a href="evidencias.html">Portafolio</a></li>
+        <li><a href="dashboard.html">Panel docente</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Descargas</strong>
+      <ul>
+        <li><a href="assets/downloads/plantilla-planeacion.txt" download>Plantilla de planeación</a></li>
+        <li><a href="assets/downloads/rubrica-innovacion.csv" download>Rúbrica de innovación</a></li>
+        <li><a href="assets/downloads/checklist-pilotaje.md" download>Checklist de pilotaje</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evidencias | Docentes Disruptivos</title>
+  <meta name="description" content="Prototipo robusto del portal Docentes Disruptivos para pilotaje y presentación de tesis.">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">D</span>
+      <span>Docentes Disruptivos<small>Prototipo robusto para tesis</small></span>
+    </a>
+    <button class="mobile-toggle" data-mobile-toggle aria-label="Abrir menú">☰</button>
+    <nav class="nav-links" data-nav-links><a href="index.html" class="">Inicio</a><a href="metodologia.html" class="">Metodología</a><a href="modulos.html" class="">Módulos</a><a href="recursos.html" class="">Recursos</a><a href="comunidad.html" class="">Comunidad</a><a href="dgeti.html" class="">DGETI</a><a href="evidencias.html" class="active">Evidencias</a><a href="pilotaje.html" class="">Pilotaje</a></nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="dashboard.html">Ingresar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-split">
+      <div class="hero-copy glass">
+        <div class="eyebrow">Portafolio y registro del pilotaje</div>
+        <h1>Captura evidencias reales del <span class="highlight">proceso de implementación</span></h1>
+        <p class="lead">Esta sección muestra cómo el sitio puede operar como portafolio digital del pilotaje. Las evidencias guardadas alimentan el dashboard y la analítica.</p>
+      </div>
+      <aside class="hero-side-card glass">
+        <h3 style="margin-top:0;color:#fff;">Evidencias recomendadas</h3>
+        <div class="pill-list"><span class="pill">Planeación</span><span class="pill">Instrumento</span><span class="pill">Producto estudiantil</span><span class="pill">Reflexión docente</span></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section light">
+    <div class="container grid-2">
+      <article class="form-card">
+        <h2>Subir evidencia al portafolio</h2>
+        <div id="evidence-notice" class="notice"></div>
+        <form id="evidence-form">
+          <div class="field-grid">
+            <label>Título de la evidencia
+              <input type="text" name="titulo" required placeholder="Ej. Planeación del módulo 5">
+            </label>
+            <label>Módulo
+              <select name="modulo" required>
+                <option value="">Selecciona</option>
+                <option>Módulo 1</option><option>Módulo 2</option><option>Módulo 3</option><option>Módulo 4</option><option>Módulo 5</option><option>Módulo 6</option>
+              </select>
+            </label>
+          </div>
+          <div class="field-grid">
+            <label>Tipo de evidencia
+              <select name="tipo" required>
+                <option value="">Selecciona</option>
+                <option>Planeación</option>
+                <option>Instrumento de evaluación</option>
+                <option>Producto del estudiante</option>
+                <option>Captura de plataforma</option>
+                <option>Reflexión docente</option>
+              </select>
+            </label>
+            <label>Nivel de impacto observado
+              <select name="nivelImpacto">
+                <option>Inicial</option>
+                <option>Medio</option>
+                <option>Alto</option>
+              </select>
+            </label>
+          </div>
+          <label>Descripción breve
+            <textarea name="descripcion" placeholder="¿Qué muestra la evidencia y por qué es relevante?" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Guardar evidencia</button>
+        </form>
+      </article>
+      <article class="panel-card">
+        <h2>Portafolio del pilotaje</h2>
+        <div id="evidence-list"></div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="brand-mark">D</span><span>Docentes Disruptivos<small>Innovar la docencia es transformar el bachillerato.</small></span></div>
+      <p class="section-intro">Versión demostrativa con formularios funcionales, dashboard, analítica básica y componentes para un pilotaje de tesis.</p>
+    </div>
+    <div>
+      <strong>Explora</strong>
+      <ul>
+        <li><a href="metodologia.html">Fundamentos</a></li>
+        <li><a href="modulos.html">Ruta metodológica</a></li>
+        <li><a href="recursos.html">Biblioteca</a></li>
+        <li><a href="pilotaje.html">Analítica</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Implementación</strong>
+      <ul>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="dgeti.html">DGETI</a></li>
+        <li><a href="evidencias.html">Portafolio</a></li>
+        <li><a href="dashboard.html">Panel docente</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Descargas</strong>
+      <ul>
+        <li><a href="assets/downloads/plantilla-planeacion.txt" download>Plantilla de planeación</a></li>
+        <li><a href="assets/downloads/rubrica-innovacion.csv" download>Rúbrica de innovación</a></li>
+        <li><a href="assets/downloads/checklist-pilotaje.md" download>Checklist de pilotaje</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

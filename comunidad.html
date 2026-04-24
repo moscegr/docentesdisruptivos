@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comunidad | Docentes Disruptivos</title>
+  <meta name="description" content="Prototipo robusto del portal Docentes Disruptivos para pilotaje y presentación de tesis.">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">D</span>
+      <span>Docentes Disruptivos<small>Prototipo robusto para tesis</small></span>
+    </a>
+    <button class="mobile-toggle" data-mobile-toggle aria-label="Abrir menú">☰</button>
+    <nav class="nav-links" data-nav-links><a href="index.html" class="">Inicio</a><a href="metodologia.html" class="">Metodología</a><a href="modulos.html" class="">Módulos</a><a href="recursos.html" class="">Recursos</a><a href="comunidad.html" class="active">Comunidad</a><a href="dgeti.html" class="">DGETI</a><a href="evidencias.html" class="">Evidencias</a><a href="pilotaje.html" class="">Pilotaje</a></nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="dashboard.html">Ingresar</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-split">
+      <div class="hero-copy glass">
+        <div class="eyebrow">Comunidad académica</div>
+        <h1>Foros, webinars y trabajo colegiado para <span class="highlight">sostener la innovación</span></h1>
+        <p class="lead">La comunidad convierte el prototipo en una experiencia social de acompañamiento. Aquí puedes simular inscripción a webinars, revisar foros y visualizar cómo se articula el trabajo colegiado con academias y buenas prácticas.</p>
+      </div>
+      <aside class="hero-side-card glass">
+        <h3 style="margin-top:0;color:#fff;">Principios de interacción</h3>
+        <div class="tag-list">
+          <span class="tag">Comunidad</span>
+          <span class="tag">Academias</span>
+          <span class="tag">Acompañamiento</span>
+          <span class="tag">Buenas prácticas</span>
+          <span class="tag">Reflexión docente</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section light" id="webinars">
+    <div class="container grid-2">
+      <article class="form-card">
+        <h2>Inscripción a webinar</h2>
+        <div id="webinar-notice" class="notice"></div>
+        <form id="webinar-form">
+          <div class="field-grid">
+            <label>Nombre completo
+              <input type="text" name="nombre" required placeholder="Nombre del participante">
+            </label>
+            <label>Correo electrónico
+              <input type="email" name="correo" required placeholder="correo@ejemplo.com">
+            </label>
+          </div>
+          <label>Selecciona webinar
+            <select name="webinar" required>
+              <option value="">Selecciona</option>
+              <option>Uso ético de la IA en el bachillerato</option>
+              <option>Planeación con progresiones y cultura digital</option>
+              <option>Evidencias para pilotaje y mejora continua</option>
+            </select>
+          </label>
+          <label>Comentario o expectativa
+            <textarea name="expectativa" placeholder="¿Qué deseas aprender o discutir?"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">Registrar asistencia</button>
+        </form>
+      </article>
+      <article class="panel-card">
+        <h2>Mis registros</h2>
+        <div id="webinar-registrations"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="academias">
+    <div class="container forum-grid">
+      <article class="forum-card"><h3>Foro de academia</h3><p class="section-intro">Tema: ¿Cómo evidenciar mediación pedagógica más allá del uso de la herramienta?</p><div class="chip-row"><span class="chip">20 respuestas</span><span class="chip">Moderado</span></div></article>
+      <article class="forum-card"><h3>Buenas prácticas DGETI</h3><p class="section-intro">Compendio de experiencias compartidas por docentes para inspirar secuencias contextualizadas.</p><div class="chip-row"><span class="chip">12 casos</span><span class="chip">Curado</span></div></article>
+      <article class="forum-card"><h3>Comunidad de pilotaje</h3><p class="section-intro">Espacio para discutir hallazgos, barreras y decisiones de mejora durante la prueba piloto.</p><div class="chip-row"><span class="chip">Pilotaje</span><span class="chip">Seguimiento</span></div></article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="brand-mark">D</span><span>Docentes Disruptivos<small>Innovar la docencia es transformar el bachillerato.</small></span></div>
+      <p class="section-intro">Versión demostrativa con formularios funcionales, dashboard, analítica básica y componentes para un pilotaje de tesis.</p>
+    </div>
+    <div>
+      <strong>Explora</strong>
+      <ul>
+        <li><a href="metodologia.html">Fundamentos</a></li>
+        <li><a href="modulos.html">Ruta metodológica</a></li>
+        <li><a href="recursos.html">Biblioteca</a></li>
+        <li><a href="pilotaje.html">Analítica</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Implementación</strong>
+      <ul>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="dgeti.html">DGETI</a></li>
+        <li><a href="evidencias.html">Portafolio</a></li>
+        <li><a href="dashboard.html">Panel docente</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Descargas</strong>
+      <ul>
+        <li><a href="assets/downloads/plantilla-planeacion.txt" download>Plantilla de planeación</a></li>
+        <li><a href="assets/downloads/rubrica-innovacion.csv" download>Rúbrica de innovación</a></li>
+        <li><a href="assets/downloads/checklist-pilotaje.md" download>Checklist de pilotaje</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
