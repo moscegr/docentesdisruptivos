@@ -58,15 +58,14 @@
     </nav>
 
     <!-- Contenido Principal: Ajustado para hacer scroll si la pantalla es corta -->
-    <main class="flex-grow flex flex-col justify-center px-4 py-28 md:py-32 relative z-10 w-full">
+    <main class="flex-grow flex flex-col justify-center px-4 py-28 md:py-32 relative z-10 w-full mt-4 md:mt-0">
 
         <!-- Contenedor central con mx-auto para asegurar centrado y scroll libre -->
         <div class="max-w-4xl w-full mx-auto text-center glass-panel p-6 sm:p-10 md:p-16 rounded-3xl shadow-2xl">
             
-            <div class="flex justify-center mb-6">
-                <div class="p-4 bg-white/10 rounded-2xl animate-float">
-                    <i data-lucide="rocket" class="w-10 h-10 md:w-12 md:h-12 text-violet-400"></i>
-                </div>
+            <!-- Logo Centralizado -->
+            <div class="flex justify-center mb-8">
+                <img src="logo.png" alt="Logo Docentes Disruptivos" class="w-48 sm:w-64 md:w-80 h-auto drop-shadow-2xl animate-float">
             </div>
 
             <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-6 tracking-tight leading-tight">
@@ -100,7 +99,7 @@
                 </div>
             </div>
 
-            <!-- Botón de acción (ahora no se cortará en laptops) -->
+            <!-- Botón de acción -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center pb-4">
                 <button class="w-full sm:w-auto px-8 py-3 bg-teal-500 hover:bg-teal-400 text-slate-900 font-semibold rounded-full transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(45,212,191,0.5)]">
                     Notificarme el lanzamiento
