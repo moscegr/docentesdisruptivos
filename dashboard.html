@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | Docentes Disruptivos</title>
+  <meta name="description" content="Portal Docentes Disruptivos · Prototipo de pilotaje para docentes de bachillerato DGETI Guerrero.">
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">D</span>
+      <span>Docentes Disruptivos<small>DGETI Guerrero</small></span>
+    </a>
+    <button class="mobile-toggle" data-mobile-toggle aria-label="Abrir menú">☰</button>
+    <nav class="nav-links" data-nav-links><a href="index.html" class="">Inicio</a><a href="metodologia.html" class="">Metodología</a><a href="modulos.html" class="">Módulos</a><a href="recursos.html" class="">Recursos</a><a href="comunidad.html" class="">Comunidad</a><a href="dgeti.html" class="">DGETI</a><a href="evidencias.html" class="">Evidencias</a><a href="pilotaje.html" class="">Pilotaje</a></nav>
+    <div class="nav-actions">
+      <a class="btn btn-outline" href="dashboard.html">Ingresar</a>
+    </div>
+  </div>
+</header>
+
+<div class="container" style="padding-top:1rem; padding-bottom:2rem;">
+  <div class="page-shell glass">
+    <div class="dashboard-grid">
+      <aside class="sidebar">
+        <a class="brand" href="index.html"><span class="brand-mark">D</span><span>Docentes Disruptivos<small>Panel docente</small></span></a>
+        <div class="sidebar-profile">
+          <img data-profile-photo class="profile-avatar-sm" src="assets/perfil.jpeg" alt="Foto de perfil del docente">
+          <div class="sidebar-profile-info">
+            <strong data-profile-name>Docente</strong>
+            <span data-profile-plantel>CBTIS / CETIS / DGETI</span>
+          </div>
+        </div>
+        <nav class="sidebar-nav">
+          <a href="dashboard.html" class="active">Panel</a>
+          <a href="metodologia.html">Diagnóstico</a>
+          <a href="modulos.html">Módulos</a>
+          <a href="recursos.html">Recursos</a>
+          <a href="comunidad.html">Comunidad</a>
+          <a href="evidencias.html">Evidencias</a>
+          <a href="pilotaje.html">Pilotaje</a>
+        </nav>
+        <div class="panel-card dark-card" style="margin-top:1rem;">
+          <h3>Ruta certificable</h3>
+          <p class="section-intro">Avanza en la ruta y usa la analítica como evidencia del pilotaje.</p>
+          <a class="btn btn-primary" href="evidencias.html">Subir evidencia</a>
+        </div>
+      </aside>
+
+      <main class="dashboard-main">
+        <section class="section" style="padding-top:0.4rem;">
+          <div class="toolbar">
+            <div class="search-shell" style="flex:1; min-width:0;">
+              <input class="searchbar" data-global-search type="search" placeholder="Buscar módulo, evidencia, planeación o página..." aria-label="Búsqueda global del panel">
+              <div class="search-results" data-search-results role="listbox" aria-label="Resultados de búsqueda"></div>
+            </div>
+          </div>
+          <h1>Bienvenida, <span class="highlight" data-profile-name>Docente</span></h1>
+          <p class="section-intro">Continúa tu ruta de integración de tecnologías disruptivas y usa este panel para articular evidencias, recursos y decisiones didácticas.</p>
+
+          <div class="panel-card dark-card" style="margin-bottom:1rem;">
+            <h3 style="margin-top:0;">Avisos para ti</h3>
+            <div id="notifications-panel" class="notifications-panel"></div>
+          </div>
+
+          <div class="panel-card dark-card progress-card">
+            <div>
+              <h3 style="margin-top:0;">Avance de la ruta <span data-progress-text>68%</span></h3>
+              <div class="progress-bar"><span data-progress-bar style="width:68%"></span></div>
+              <p class="section-intro" data-completed-count>4 de 6 módulos completados</p>
+              <div class="toolbar">
+                <a class="btn btn-primary" href="modulos.html">Continuar</a>
+                <a class="btn btn-secondary" href="pilotaje.html">Ver analítica</a>
+              </div>
+            </div>
+            <img src="assets/dashboard-ui.png" alt="Vista del dashboard">
+          </div>
+        </section>
+
+        <section class="section" style="padding-top:0;">
+          <h2>Tu ruta metodológica</h2>
+          <div id="dashboard-route"></div>
+        </section>
+
+        <section class="section" style="padding-top:0;">
+          <div class="dashboard-panels">
+            <div class="panel-card dark-card"><h3>Mi portafolio</h3><p class="section-intro"><span data-evidence-count>0</span> evidencias registradas.</p><a class="btn btn-primary" href="evidencias.html">Gestionar evidencias</a></div>
+            <div class="panel-card dark-card"><h3>Webinars</h3><p class="section-intro">Inscríbete y usa el espacio como acompañamiento del pilotaje.</p><a class="btn btn-primary" href="comunidad.html#webinars">Inscribirme</a></div>
+            <div class="panel-card dark-card"><h3>Descargas</h3><p class="section-intro">Plantillas y rúbricas disponibles para demostrar uso real del portal.</p><a class="btn btn-primary" href="recursos.html">Abrir recursos</a></div>
+          </div>
+        </section>
+
+        <section class="section" style="padding-top:0;">
+          <div class="form-card">
+            <h2>Perfil del docente piloto</h2>
+            <div id="profile-notice" class="notice"></div>
+
+            <div class="profile-photo-wrap">
+              <img data-profile-photo class="profile-avatar" src="assets/perfil.jpeg" alt="Foto de perfil del docente">
+              <div class="profile-photo-info">
+                <h3 data-profile-name>Docente</h3>
+                <p>Esta foto se mostrará en tu panel y en el portafolio del pilotaje. Puedes reemplazarla por una imagen propia (PNG o JPG, máximo 1.5&nbsp;MB).</p>
+                <div class="profile-photo-actions">
+                  <label class="btn-mini" for="profile-photo-input">
+                    📷 Cambiar foto
+                    <input id="profile-photo-input" class="profile-photo-input" type="file" accept="image/*">
+                  </label>
+                  <button id="profile-photo-remove" class="btn-mini is-danger" type="button">Restaurar predeterminada</button>
+                </div>
+              </div>
+            </div>
+
+            <form id="profile-form">
+              <div class="field-grid">
+                <label>Nombre
+                  <input type="text" name="nombre" required>
+                </label>
+                <label>Correo
+                  <input type="email" name="correo">
+                </label>
+              </div>
+              <div class="field-grid">
+                <label>Plantel
+                  <input type="text" name="plantel">
+                </label>
+                <label>Área disciplinar
+                  <input type="text" name="area">
+                </label>
+              </div>
+              <label>Metas del pilotaje
+                <textarea name="metas"></textarea>
+              </label>
+              <div class="toolbar">
+                <button class="btn btn-primary" type="submit">Guardar perfil</button>
+                <button class="btn btn-secondary" type="button" id="export-state">⬇ Exportar mis datos (JSON)</button>
+                <button class="btn btn-danger" type="button" id="reset-state">Reiniciar demo</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <aside class="dashboard-side">
+        <div class="panel-card dark-card"><h3>Alineación</h3><div class="pill-list"><span class="pill">NEM</span><span class="pill">MCCEMS</span><span class="pill">DGETI</span></div></div>
+        <div class="panel-card dark-card" style="margin-top:1rem;"><h3>Principios clave</h3><div class="tag-list"><span class="tag">Inclusión</span><span class="tag">Comunidad</span><span class="tag">Transversalidad</span><span class="tag">Cultura digital</span><span class="tag">Evaluación auténtica</span></div></div>
+        <div class="panel-card dark-card" style="margin-top:1rem;"><h3>Herramientas sugeridas</h3><ul class="list-clean"><li>IA generativa</li><li>LMS</li><li>RA/RV</li><li>Portafolio digital</li><li>Analítica simple</li></ul></div>
+        <div class="panel-card dark-card" style="margin-top:1rem;"><h3>Próximo paso</h3><p class="section-intro">Completa el formulario de secuencia didáctica y registra una evidencia mínima para activar la mejora continua.</p><a class="btn btn-primary" href="modulos.html">Diseñar secuencia</a></div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand"><span class="brand-mark">D</span><span>Docentes Disruptivos<small>Innovar la docencia es transformar el bachillerato.</small></span></div>
+      <p class="section-intro">Versión demostrativa con formularios funcionales, dashboard, analítica básica y componentes para el pilotaje en bachillerato.</p>
+    </div>
+    <div>
+      <strong>Explora</strong>
+      <ul>
+        <li><a href="metodologia.html">Fundamentos</a></li>
+        <li><a href="modulos.html">Ruta metodológica</a></li>
+        <li><a href="recursos.html">Biblioteca</a></li>
+        <li><a href="pilotaje.html">Analítica</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Implementación</strong>
+      <ul>
+        <li><a href="comunidad.html">Comunidad</a></li>
+        <li><a href="dgeti.html">DGETI</a></li>
+        <li><a href="evidencias.html">Portafolio</a></li>
+        <li><a href="dashboard.html">Panel docente</a></li>
+      </ul>
+    </div>
+    <div>
+      <strong>Descargas</strong>
+      <ul>
+        <li><a href="assets/downloads/plantilla-planeacion.txt" download>Plantilla de planeación</a></li>
+        <li><a href="assets/downloads/rubrica-innovacion.csv" download>Rúbrica de innovación</a></li>
+        <li><a href="assets/downloads/checklist-pilotaje.md" download>Checklist de pilotaje</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>

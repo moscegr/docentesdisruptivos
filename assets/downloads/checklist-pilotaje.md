@@ -1,0 +1,7 @@
+- Diagnóstico realizado
+- Alineación curricular validada
+- Tecnología seleccionada
+- Planeación diseñada
+- Implementación aplicada
+- Evidencias recolectadas
+- Retroalimentación registrada
