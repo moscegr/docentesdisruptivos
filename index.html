@@ -6,9 +6,15 @@
   <title>Docentes Disruptivos | Prototipo robusto</title>
   <meta name="description" content="Portal Docentes Disruptivos · Prototipo de pilotaje para docentes de bachillerato DGETI Guerrero.">
   <link rel="stylesheet" href="styles.css">
-  
 </head>
 <body>
+
+<!-- INICIO: Banner de Eslogan -->
+<div style="background-color: #0f172a; color: #f8fafc; text-align: center; padding: 12px 20px; font-size: 0.95rem; font-weight: 500; letter-spacing: 0.3px; line-height: 1.4; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; z-index: 100;">
+  La innovación docente es el motor de cambio del Bachillerato. Impulsando la vanguardia educativa en Guerrero.
+</div>
+<!-- FIN: Banner de Eslogan -->
+
 <header class="topbar">
   <div class="container nav">
     <a class="brand" href="index.html">
@@ -155,5 +161,44 @@
   </div>
 </footer>
 <script src="app.js"></script>
+
+<!-- INICIO: Modal de Video Promocional -->
+<div id="promoVideoModal" style="display: flex; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+  <div style="position: relative; max-width: 800px; width: 90%; background: #000; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+    <button id="closePromoBtn" style="position: absolute; top: 15px; right: 15px; color: #fff; background: rgba(0, 0, 0, 0.6); border: 2px solid #fff; font-size: 24px; font-weight: bold; cursor: pointer; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.3s;" aria-label="Cerrar video">&times;</button>
+    <video id="promoVideo" src="assets/promocion.mp4" autoplay muted playsinline controls style="width: 100%; max-height: 80vh; display: block; object-fit: contain;"></video>
+  </div>
+</div>
+
+<script>
+  // Lógica para cerrar la ventana emergente y pausar el video
+  document.addEventListener('DOMContentLoaded', function() {
+    var modal = document.getElementById("promoVideoModal");
+    var closeBtn = document.getElementById("closePromoBtn");
+    var video = document.getElementById("promoVideo");
+
+    // Efecto hover simple para el botón
+    closeBtn.addEventListener('mouseenter', () => closeBtn.style.background = 'rgba(255, 0, 0, 0.8)');
+    closeBtn.addEventListener('mouseleave', () => closeBtn.style.background = 'rgba(0, 0, 0, 0.6)');
+
+    // Función para cerrar modal
+    function closeModal() {
+      modal.style.display = "none";
+      video.pause(); // Importante: detiene la reproducción y el audio
+    }
+
+    // Cerrar al hacer clic en el botón X
+    closeBtn.onclick = closeModal;
+
+    // Cerrar al hacer clic fuera del área del video (en el fondo oscuro)
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    };
+  });
+</script>
+<!-- FIN: Modal de Video Promocional -->
+
 </body>
 </html>
