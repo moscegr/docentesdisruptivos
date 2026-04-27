@@ -191,8 +191,8 @@
 
     <!-- Contenedor del reproductor -->
     <div style="background: #000; position: relative;">
-      <!-- Se ha removido el atributo 'muted' para que arranque con sonido -->
-      <video id="promoVideo" src="assets/promocion.mp4" autoplay playsinline controls style="width: 100%; max-height: 75vh; display: block; object-fit: contain; outline: none;"></video>
+      <!-- Agregamos 'muted' por defecto en el HTML para asegurar que el navegador cargue el autoplay visualmente -->
+      <video id="promoVideo" src="assets/promocion.mp4" autoplay muted playsinline controls style="width: 100%; max-height: 75vh; display: block; object-fit: contain; outline: none;"></video>
     </div>
   </div>
 </div>
@@ -211,7 +211,7 @@
       video.pause();
     }
 
-    // Asignar eventos de cierre a ambos botones (la X y el botoncito rojo estilo Mac)
+    // Asignar eventos de cierre a ambos botones
     closeBtn.onclick = closeModal;
     closeBtnMac.onclick = closeModal;
 
@@ -222,12 +222,24 @@
       }
     };
 
-    // Manejo de promesa para forzar el autoplay con sonido si el navegador lo permite
+    // Lógica inteligente de Autoplay y prevención de errores
     setTimeout(() => {
+      video.muted = false; // Intenta quitar el silencio
       var playPromise = video.play();
+      
       if (playPromise !== undefined) {
         playPromise.catch(error => {
-          console.warn("El navegador bloqueó el autoplay con sonido automático por políticas del sistema. Mostrando controles para que el usuario inicie.", error);
+          // Si el navegador bloquea el autoplay con sonido o la ruta no existe
+          console.warn("Navegador bloqueó el sonido automático o el archivo no existe. Ejecutando autoplay silenciado.");
+          video.muted = true; // Lo volvemos a silenciar
+          
+          // Capturamos el posible error de la segunda promesa para evitar [UNHANDLEDREJECTION]
+          var fallbackPromise = video.play();
+          if (fallbackPromise !== undefined) {
+            fallbackPromise.catch(fallbackError => {
+              console.error("El video no pudo reproducirse debido a un error con el archivo fuente:", fallbackError);
+            });
+          }
         });
       }
     }, 150);
